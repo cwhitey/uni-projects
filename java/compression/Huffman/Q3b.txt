@@ -1,0 +1,1 @@
+The following text file will be used for the Huffman code question. You will be expected to correctly determine the length of this file as the Huffman algorithm would produce.
