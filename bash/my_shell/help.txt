@@ -1,0 +1,31 @@
+################################################################
+##################### Callum's SHELL v1.0  #####################
+################################################################
+
+This simple SHELL program provides the user with simple commands to interact with a Unix based operating system.
+
+The prompt displayed at every line before the user enters a command shows the current working direct, the login name of the user running the SHELL, and will display '$' for a regular user, or '#' for an adminstrator.
+
+Commands:
+ - cd [directory]
+	* Changes the working directory to the one specified.
+	* '..' as an argument will go back a directory.
+	* If the provided argument is not a directory, shell will print an error message.
+ - clr
+	* Clears all previous text displayed in the terminal window.
+ - dir [directory]
+	* Lists the contents of the specified directory.
+	* If the provided argument is not a directory, shell will print an error message.
+ - environ
+	* Displays all system environment variables.
+ - echo [args]
+	* Displays all arguments on the screen.
+	* Quotes may be used to preserve white space such as spaces or tabs.
+	* Multiple arguments will be space separated.
+ - help
+	* Display shell commands and details.
+ - pause
+	* Pause execution of the shell until ENTER is pressed.
+ - quit
+	* Leave Callum's SHELL. 
+	* This will end the process with an exit status of 0.
