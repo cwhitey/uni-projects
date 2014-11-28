@@ -50,6 +50,7 @@ If there are ever issues with running an executable, run:
 * Bugs relevant to all tasks:
   * Unable to specify an output file location for any of the tasks. The output file just gets put in the current working directory of the program.
 
+# Notes
 * pgm2img.pl
   * Certain text editors add a newline at the end of the file after saving it. This was an issue for me when creating my own pgm files as pgm2img uses 'tail' to get the bytes, 
 so this would grab the added newline and leave off some of the data. This isn't so much a bug, but more a weird issue I faced when testing this program. I didn't have this issue 
