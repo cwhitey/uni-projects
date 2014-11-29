@@ -1,25 +1,16 @@
-// Name: Callum White
-// Student ID: 24571520
-///////////////////////////////
+Name: Callum White
+Student ID: 24571520
 
-###############################
-##### General Information #####
-###############################
+# General Information
 * All tasks successfully run without errors.
 * I have created a module called PGMHelper and used this for subroutines which would otherwise be defined in multiple files.
 * I included a comment in my output PGM files because I found that the image editor I was using to render P5 PGM files (InkScape) would'nt load the file if it did not have a comment line.
 
-
-###################################
-##### Permissions Information #####
-###################################
+# Permissions Information
 If there are ever issues with running an executable, run:
-    * chmod a+x [filename]
+   * chmod a+x [filename]
 
-
-#################################
-##### Execution Information #####
-#################################
+# Execution Information
 * pgm2img.pl
   * Usage: ./pgm2img.pl [filename.pgm]
 * img2pgm.pl
@@ -34,10 +25,7 @@ If there are ever issues with running an executable, run:
   * 'threshold_percentage' must be specified.
   * The input file can be either a .img or .smg file.
 
-
-###################################################
-##### Supported and Unsupported Functionality #####
-###################################################
+# Supported and Unsupported Functionality
 * pgm2img.pl
   * All functionality supported.
   * The header and the image can be on one line. e.g. The following file is supported: P5 1 1 255 a
@@ -58,10 +46,7 @@ If there are ever issues with running an executable, run:
   * Will threshold the included image for any 'threshold_percentage' > 0 and < 100.
   * When given a .smg file, it also checks for an even amount of bytes, as smg2pgm does.
 
-
-################################
-##### Bugs and Limitations #####
-################################
+# Bugs and Limitations
 * Bugs relevant to all tasks:
   * Unable to specify an output file location for any of the tasks. The output file just gets put in the current working directory of the program.
 
