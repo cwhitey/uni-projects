@@ -1,5 +1,7 @@
 import xml.etree.ElementTree as ET
 from turingTape import TuringTape
+from turingTapeDeque import TuringTapeDeque
+from turingTapeString import TuringTapeString
 
 
 def print_attributes(initial_state, tape):
@@ -55,7 +57,7 @@ def apply_transition(transition, tape):
     return transition.get("newstate")
 
 
-def run_states(states, tape, final_states, initial_state):
+def run_states(states, tape, final_states, initial_state, silence=False):
     """Starting from initial_state, run through to transitions across the states, manipulating the tape as we go.
     Will halt with answer 'no' if it could not find a state referenced in the Turing Machine definition."""
     state = get_state(initial_state, states)
@@ -68,12 +70,15 @@ def run_states(states, tape, final_states, initial_state):
             answer = "no"
         else:
             step_no += 1
-            print_state_attributes(state, step_no, tape)
-            print ""
+            if not silence:
+                print_state_attributes(state, step_no, tape)
+                print ""
     print "halted with answer", answer
+    print "machine state at halt: "
+    print_state_attributes(state,step_no,tape)
 
 
-def run_turing(filename):
+def run_turing(filename, silence=False, tapeType="builtin"):
     """Parse xml file 'filename' definition of turing machine, and simulate it"""
     tree = ET.parse(open(filename))
     root = tree.getroot()
@@ -96,10 +101,13 @@ def run_turing(filename):
                 final_states.append(state_child.get("name"))
         if tag == "states":
             state_root = child
-    tape = TuringTape(blank, initial_tape)
-    print_attributes(initial_state, tape)
-    print
-    run_states(state_root, tape, final_states, initial_state)
-
-
-
+    if tapeType == "deque":
+        tape = TuringTapeDeque(blank, initial_tape)
+    elif tapeType == "string":
+        tape = TuringTapeString(blank, initial_tape)
+    else:
+        tape = TuringTape(blank, initial_tape)
+    if not silence:
+        print_attributes(initial_state, tape)
+        print
+    run_states(state_root, tape, final_states, initial_state, silence)

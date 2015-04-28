@@ -8,7 +8,7 @@ class TuringTape:
     In future, this class could also hold a turing machine's alphabet, and check the validity of each symbol written
     to the tape."""
 
-    tape = []
+    tape = None
     head_index = 0
     blank = None
 
@@ -25,14 +25,14 @@ class TuringTape:
         return self.blank
 
     def move_left(self):
-        """Move head left. Move to new blank element if we are at the 'first' symbol of the tape"""
+        """Move head left. Move to new blank element if we are at the 'left-most' symbol of the tape"""
         if self.head_index == 0:
             self.tape.insert(0, self.blank)
         else:
             self.head_index -= 1
 
     def move_right(self):
-        """Move head right. Move to new blank element if we are at the 'last' symbol of the tape"""
+        """Move head right. Move to new blank element if we are at the 'right-most' symbol of the tape"""
         if self.head_index == (len(self.tape) - 1):
             self.tape.append(self.blank)
         self.head_index += 1

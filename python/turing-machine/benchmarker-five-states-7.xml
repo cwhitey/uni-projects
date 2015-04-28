@@ -1,0 +1,33 @@
+<turingmachine>
+  <alphabet>01</alphabet>
+  <initialtape>000</initialtape>
+  <blank char="0"/>
+  <initialstate name="A" />
+  <finalstates>
+    <finalstate name="H" />
+  </finalstates>
+  <states>
+    <state name="A">
+      <transition seensym="0" writesym="1" newstate="B" move="L"/>
+      <transition seensym="1" writesym="1" newstate="D" move="L"/>
+    </state>
+    <state name="B">
+      <transition seensym="0" writesym="1" newstate="C" move="R"/>
+      <transition seensym="1" writesym="0" newstate="E" move="R"/>
+    </state>
+    <state name="C">
+      <transition seensym="0" writesym="0" newstate="A" move="L"/>
+      <transition seensym="1" writesym="0" newstate="B" move="R"/>
+    </state>
+    <state name="D">
+      <transition seensym="0" writesym="1" newstate="E" move="L"/>
+      <transition seensym="1" writesym="1" newstate="H" move="L"/>
+    </state>
+    <state name="E">
+      <transition seensym="0" writesym="1" newstate="C" move="R"/>
+      <transition seensym="1" writesym="1" newstate="C" move="L"/>
+    </state>
+    <state name="H">
+    </state>
+  </states>
+</turingmachine>
